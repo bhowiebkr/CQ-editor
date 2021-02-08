@@ -1,7 +1,11 @@
 import sys
+import os
 import argparse
 
 from PyQt5.QtWidgets import QApplication
+import qdarkstyle
+
+os.environ['QT_API'] = 'pyqt5'
 
 NAME = 'CQ-editor'
 
@@ -24,6 +28,8 @@ def main():
         win.components['editor'].load_from_file(args.filename)
 
     win.show()
+
+    app.setStyleSheet(qdarkstyle.load_stylesheet())
     sys.exit(app.exec_())
 
 

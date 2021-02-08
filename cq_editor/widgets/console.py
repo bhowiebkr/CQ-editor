@@ -16,6 +16,8 @@ class ConsoleWidget(RichJupyterWidget,ComponentMixin):
 #        if not customBanner is None:
 #            self.banner = customBanner
 
+        self.set_default_style(colors="linux")
+
         self.font_size = 6
         self.kernel_manager = kernel_manager = QtInProcessKernelManager()
         kernel_manager.start_kernel(show_banner=False)
